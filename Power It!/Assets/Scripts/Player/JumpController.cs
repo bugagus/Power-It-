@@ -6,7 +6,7 @@ using UnityEngine;
 public class JumpController : MonoBehaviour
 {
     [SerializeField] private Transform leftHand, rightHand;
-    [SerializeField] private float rotationSpeed, jumpForce, extraImpulseGrowth;
+    [SerializeField] private float rotationSpeed, jumpForce, extraImpulseGrowth, _maxFallSpeed;
     private float _baseJumpForce;
     private Rigidbody2D _rb;
     bool _grabbedRight, _grabbedLeft;
@@ -45,6 +45,11 @@ public class JumpController : MonoBehaviour
         else if(!_grabbedRight && !_grabbedLeft)
         {
             _rb.gravityScale = 1f;
+        }
+
+        if(_rb.velocity.y < -_maxFallSpeed)
+        {
+            _rb.velocity = new Vector3(_rb.velocity.x, -_maxFallSpeed, 0f);
         }
     }
 
