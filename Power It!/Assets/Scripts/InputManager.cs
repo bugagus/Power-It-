@@ -4,8 +4,10 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class InputManager : MonoBehaviour
 {
-     public InputControls _input;
+    private InputControls _input;
     private JumpController _jumpController;
+    public bool IsLeftHandColliding {  get; set; }
+    public bool IsRightHandColliding {  get; set; }
 
     private void Awake()
     {
@@ -33,7 +35,8 @@ public class InputManager : MonoBehaviour
 
     private void StartRightHand(InputAction.CallbackContext context)
     {
-        _jumpController.GrabRight();
+        if (IsRightHandColliding)
+            _jumpController.GrabRight();
         Debug.Log("Pulso la E");
     }
 
@@ -44,7 +47,8 @@ public class InputManager : MonoBehaviour
 
     private void StartLeftHand(InputAction.CallbackContext context)
     {
-        _jumpController.GrabLeft();
+        if (IsLeftHandColliding)
+            _jumpController.GrabLeft();
         Debug.Log("Pulso la Q");
     }
 
