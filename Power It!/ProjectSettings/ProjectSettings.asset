@@ -646,8 +646,8 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Power It
-  metroPackageVersion: 
+  metroPackageName: PowerIt
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -655,7 +655,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Power It
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: Power It
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
